@@ -1,0 +1,53 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <script>
+      let a = Number(prompt("Введите А:"));
+      let b = Number(prompt("Введите B:")); 
+      for(;a>=b;a--){ 
+        alert(a);
+      }
+// ----------------------------------------------
+      let n = [Number(prompt("Введите длину цепочки чисел N:"))];
+      let n2 = [];
+      let n1=0;
+      for(let i=0;i<n;i++){
+        n2[i] = prompt("Введите " + Number(i+1) + " число:");
+      }
+      for(let i=0;i<n;i++){
+        if((n2[i]>=5) && (n2[i]<=10)){
+          n1++;
+        }
+      }
+      alert("Количество чисел от 5 до 10 = " + n1);
+// ----------------------------------------------
+      let z = [Number(prompt("Введите длину цепочки N:"))];
+      let z1 = [];
+      for(let i=0;i<z;i++){
+        z1[i] = prompt("Введите " + Number(i+1) + " число:");
+      }
+      alert("Наименьшее число - " + Math.min(...z1));
+// ----------------------------------------------
+      // 4. не понял как делать
+      let n4 = prompt("N = ");
+      let a4 = prompt("A = ");
+      let result = Number(a4);
+      let flag = true;
+      for(let i=2;i<=n4;i++){
+        if(flag){
+          result += Math.pow(a4,i);
+          flag = false;
+        }
+        else{
+          result -= Math.pow(a4,i);
+          flag = true;
+        }
+      }
+      alert("Резуьтат = " + Number(result+1));
+    </script>
+    <p>
+      Текст
+    </p>
+  </body>
+</html>

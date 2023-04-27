@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+    </style>
+    <script>/*
+      alert("Сообщение до ошибки");
+      try{
+        document.getElementById("qwerty").innerHTML = "5";
+        //alert("Верный код");
+      }
+      catch(err){
+        alert("Произошла ошибка");
+        alert(err);
+        alert(err.name);
+        alert(err.message);
+        alert(err.stack);
+      }
+      finally{
+        alert("Блок всегда работает");
+      }
+      alert("Сообщение после ошибки");*/
+      function division(x,y){
+        if(y==0){
+          throw new Error("Нельз делить на 0");
+        }
+        return x/y;
+      }
+      let result = 0;
+      try{
+        result = division(5,2);
+        alert(result);
+      }
+      catch(err){
+        alert(err.name);
+        alert(err.message);
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <form>
+
+      </form>
+    </div>
+  </body>
+</html>

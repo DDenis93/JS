@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <style>
+      body{
+        width: 300px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      div{
+        box-shadow: 0px 1px 10px gray;
+        border: 2px solid gray;
+        padding: 20px;
+      }
+      input[type=Num]:focus{
+        outline: none;
+        background-color: rgb(250, 250, 250);
+      }
+      hr{
+        width: 250px;
+        height: 15px;
+        background: linear-gradient(to right, red, yellow, green,yellow, red);
+      }
+    </style>
+    <script>
+      function calc(){
+        let height = document.getElementById("height");
+        let weight = document.getElementById("weight");
+        let res = weight.value/((height.value/100)*(height.value/100));
+        var p = document.getElementById("nam");
+        range1.value = res;
+        if(res<18.5){
+          p.innerHTML="Недостаточный вес";}
+        if(res>18.5 && res<24.9){
+          p.innerHTML="Здоровый вес";}
+        if(res>25 && res<29.9){
+          p.innerHTML="Избыточный вес";}
+        if(res>30){
+          p.innerHTML="Ожирение";}
+        document.getElementById("res1").innerText = "Индекс массы тела - " + res.toFixed(2);}
+    </script>
+  </head>
+  <body>
+    <div>
+      <form>
+        <label>Рост(см) : <input type="number" id="height" onchange="calc()"></label><br><br>
+        <label>Вес(кг) : <input type="number" id="weight" onchange="calc()"></label><br><br>
+        <button type="button" onclick="calc()">Применить</button><br><br>
+        <hr>
+        <input type="range" id="range1" min="0" max="100">
+        <br><br>
+        <label id="nam"></label>
+        <p id="res1"></p>
+      </form>
+    </div>
+  </body>
+</html>

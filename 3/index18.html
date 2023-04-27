@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      .myClass{
+        color: brown;
+      }
+      #myID{
+        color: aquamarine;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="contener">
+      <h1 class="myClass">Заголовок 1</h1>
+      <p align="center" class="myClass">Текстовое сообщение</p>
+      <hr>
+      <h1 id="myID">Заголовок 2</h1>
+      <p align="center" id="myID">Текстовое сообщение</p>
+      <hr>
+      <h1 align="center">Заголовок 3</h1>
+      <p>Текстовое сообщение</p>
+      <hr>
+    </div>
+    <script>
+      //let element = document.body.firstElementChild;
+      //let element = document.body.lastElementChild;
+      //let element = document.body.previousElementSibling;
+      //let element = document.body.nextElementSibling;
+      /*let element = document.querySelectorAll("[align]");
+      for(let i of element){
+        console.log(i);
+      }*/
+      let element = document.querySelector("[align]");
+      element.style.color = "orange";
+      element.style.paddingLeft = "80%";
+      let styleElement = getComputedStyle(element,"::after");
+      alert(styleElement.fontSize);
+      let s = parseInt(styleElement.fontSize)+20+"px";//в числа
+      element.style.fontSize = s;
+      alert(s+1);
+      //let parentElement = element.closest(".contener");
+      //console.log(parentElement);
+      //let element1 = document.querySelectorAll("[align]")[0];
+
+    </script>
+  </body>
+</html>

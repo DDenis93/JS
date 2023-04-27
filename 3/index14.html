@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <style>
+      
+    </style>
+    <script>
+      /*let student = {
+        firstName: "Denis",
+        lastName: "Dyakonov",
+        "level Of Period": "Среднее",
+        courseName: {
+          module1: "Верстка",
+          module2: "JavaScript",
+          module3: "React",
+        },
+        trainingPeriod: 5,
+      };
+
+      let student2 = student;
+
+      for(let v in student.courseName){
+        alert(v);
+      }
+
+      alert(student.courseName.module1);
+      alert(student["level Of Period"]);
+      student.middleName = "Dmitrievich";
+      alert(student.middleName);
+      delete student.middleName;
+      alert(student.middleName);
+      student.courseName = "Fullstack - разработка на языке Python";
+      alert(student.courseName);*/
+
+      //------------------------------------
+
+/*
+      function newStudent(firstName, lastName, courseName){
+        return{
+          fName: firstName,
+          lName: lastName,
+          cName: courseName,
+        }
+      }
+      let student = newStudent("Денис", "Дьяконов", "JavaScript");
+      alert(student.fName);
+      // Object.assign() - клонирование объектов
+      let student2 = Object.assign({},student);
+      alert(student2.cName);*/
+
+      //------------------------------------
+      let student = {
+        firstName: "Denis",
+        lastName: "Dyakonov",
+        courseName: "Fullstack - JavaScript",
+        show: function(){
+          alert(this.firstName +" "+ this.lastName +" "+ this.courseName);
+        }
+      }
+      student.show();
+    </script>
+  </head>
+  <body>
+    <div>
+      <form>
+
+      </form>
+    </div>
+  </body>
+</html>

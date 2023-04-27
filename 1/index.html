@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script>
+      function reSize(){
+        document.querySelector("img").style.width = document.getElementById("sizeR").value+"%"; }
+      function blur1(){
+        let value = Number(document.getElementById("blur").value);
+          document.querySelector("img").style.filter = `blur(${value}px)`; }
+      function brightness1(){
+        let value = Number(document.getElementById("brightness").value);
+          document.querySelector("img").style.filter = `brightness(${value}%)`; }
+      function contrast1(){
+        let value = Number(document.getElementById("contrast").value);
+          document.querySelector("img").style.filter = `contrast(${value}%)`; }
+      function grayscale1(){
+        let value = Number(document.getElementById("grayscale").value);
+          document.querySelector("img").style.filter = `grayscale(${value}%)`; }
+      function hRotate1(){
+        let value = Number(document.getElementById("hRotate").value);
+          document.querySelector("img").style.filter = `hue-rotate(${value*3.6}deg)`; }
+      function invert1(){
+        let value = Number(document.getElementById("invert").value);
+          document.querySelector("img").style.filter = `invert(${value}%)`; }
+      function opacity1(){
+        let value = Number(document.getElementById("opacity").value);
+          document.querySelector("img").style.filter = `opacity(${value}%)`; }
+      function saturate1(){
+        let value = Number(document.getElementById("saturate").value);
+          document.querySelector("img").style.filter = `saturate(${value*10}%)`; }
+      function sepia1(){
+        let value = Number(document.getElementById("sepia").value);
+          document.querySelector("img").style.filter = `sepia(${value}%)`; }
+    </script>
+  </head>
+  <body>
+    <img src="1.jpg" alt="" width="30%"><br>
+    Разрешение: <br>
+    <input type="number" id="sizeR" onchange="reSize()"><br><hr>
+    Размытие: <br>
+    <input type="range" id="blur" min="0" max="100" value="0" onchange="blur1()"><br><hr>
+    Яркость: <br>
+    <input type="range" id="brightness" min="0" max="100" onchange="brightness1()"><br><hr>
+    Контраст: <br>
+    <input type="range" id="contrast" min="0" max="100" onchange="contrast1()"><br><hr>
+    Оттенки серого: <br>
+    <input type="range" id="grayscale" min="0" max="100" onchange="grayscale1()"><br><hr>
+    Оттенок-поворот: <br>
+    <input type="range" id="hRotate" min="0" max="100" onchange="hRotate1()"><br><hr>
+    Инверсия: <br>
+    <input type="range" id="invert" min="0" max="100" onchange="invert1()"><br><hr>
+    Непрозрачность: <br>
+    <input type="range" id="opacity" min="0" max="100" onchange="opacity1()"><br><hr>
+    Насыщенность: <br>
+    <input type="range" id="saturate" min="0" max="100" onchange="saturate1()"><br><hr>
+    Сепия: <br>
+    <input type="range" id="sepia" min="0" max="100" onchange="sepia1()"><br>
+  </body>
+</html>

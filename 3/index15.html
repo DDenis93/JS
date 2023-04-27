@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      
+    </style>
+    <script>
+      class Teacher{
+        //bigName = ""
+        #Age = 18
+        constructor(name, subject){
+          //this._name = name
+          this.subject = subject
+        }
+        set name(value){
+          this._name = value.toUpperCase();
+        }
+        get name(){
+          return this._name
+        }
+
+        show(){
+          alert("Имя пользователя: " + this._name + ", предмет - " + this.subject + ", возраст: "+this.#Age);
+        }
+      }
+
+      class ContactTeacher extends Teacher{
+        constructor(name, email) {
+          super(name);
+          this.email = email;
+        }
+        show2(){
+          alert("Имя пользователя: "+this.name+", почта: "+this.email);
+        }
+      }/*
+      let person4 = new ContactTeacher("Андрей Шимбирёв","a.a.shimbirev@mpt.ru");
+      person4.show2();*/
+      let person1 = new Teacher("илья буканов","Backend - разработка на фреймворке Spring");
+      person1.name = "Андрей";
+      
+      person1.show();
+      
+      /*
+      
+      let person2 = new Teacher("Екатерина Бойцова","Backend - разработка на фреймворке Django");
+      let person3 = new Teacher("Андрей Вилков","Сетевые технологии");
+
+      person1.show();
+      person2.show();
+      person3.show();*/
+/*
+      alert(person1.name);
+      alert(person2.name);
+      alert(person3.name);*/
+    </script>
+  </head>
+  <body>
+    <div>
+      <form>
+
+      </form>
+    </div>
+  </body>
+</html>

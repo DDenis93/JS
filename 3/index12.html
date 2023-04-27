@@ -1,0 +1,156 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <script>
+      /*
+        1. Дана квадратная матрица размера N.
+        Посчитать произведение каждого столбца.
+      */
+      let m = [];
+      let n = prompt("Введите размер квадратной матрицы:");
+      for(let i=0;i<n;i++){
+        m[i] = new Array();
+        for(let k=0;k<n;k++){
+          m[i][k] = prompt("Введите значение " + i + " " + k);
+        }
+      }
+      document.write("Введена таблица:" + "<br>");
+      for(let i=0;i<n;i++){
+        for(let k=0;k<n;k++){
+          document.write(m[i][k]);
+        }
+        document.write("<br>");
+      }
+      let n2 = 1; 
+      let n3 = [];
+      for(let i=0;i<n;i++){
+        for(let k=0;k<n;k++){
+          n2 = n2 * Number(m[k][i]);
+        }
+        n3[i] = n2;
+        n2 = 1;
+      }
+      document.write("Произведения столбцов:" + "<br>" + n3);
+      /*
+        2. Дана квадратная матрица M порядка N.
+        Обнулить элементы побочной диагонали.
+      */
+      m = [];
+      n = prompt("Введите размер квадратной матрицы:");
+      for(let i=0;i<n;i++){
+        m[i] = new Array();
+        for(let k=0;k<n;k++){
+          m[i][k] = prompt("Введите значение " + i + " " + k);
+        }
+      }
+      document.write("Введена таблица:" + "<br>");
+      for(let i=0;i<n;i++){
+        for(let k=0;k<n;k++){
+          document.write(m[i][k]);
+        }
+        document.write("<br>");
+      }
+      for(let i=0;i<n;i++){
+        for(let k=0;k<n;k++){
+          m[i][n-i-1] = 0;
+        }
+      }
+      document.write("<br>" + "Элементы таблицы обнулены:" + "<br>");
+      for(let i=0;i<n;i++){
+        for(let k=0;k<n;k++){
+          document.write(m[i][k]);
+        }
+        document.write("<br>");
+      }
+      /*
+        3. Дана квадратная матрица M порядка N.
+        Вывести элементы зеркально снизу вверх.
+      */
+      m = [];
+      n = prompt("Введите размер квадратной матрицы:");
+      for(let i=0;i<n;i++){
+        m[i] = new Array();
+        for(let k=0;k<n;k++){
+          m[i][k] = prompt("Введите значение " + i + " " + k);
+        }
+      }
+      document.write("Введена таблица:" + "<br>");
+      for(let i=0;i<n;i++){
+        for(let k=0;k<n;k++){
+          document.write(m[i][k]);
+        }
+        document.write("<br>");
+      }
+      document.write("<br>" + "Элементы таблицы отражены зеркально снизу вверх:" + "<br>");
+      for(let i=n-1;i>=0;i--){
+        for(let k=0;k<n;k++){
+          document.write(m[i][k]);
+        }
+        document.write("<br>");
+      }
+      /*
+        4. Дана квадратная матрица M порядка N.
+        Вывести элементы с поворотом на 90 градусов против часовой стрелки.
+      */
+      m = [];
+      n = prompt("Введите размер квадратной матрицы:");
+      for(let i=0;i<n;i++){
+        m[i] = new Array();
+        for(let k=0;k<n;k++){
+          m[i][k] = prompt("Введите значение " + i + " " + k);
+        }
+      }
+      document.write("Введена таблица:" + "<br>");
+      for(let i=0;i<n;i++){
+        for(let k=0;k<n;k++){
+          document.write(m[i][k]);
+        }
+        document.write("<br>");
+      }
+      document.write("<br>" + "Элементы таблицы повернуты на 90 градусов <br> против часовой стрелки:" + "<br>");
+      for(let i=n-1;i>=0;i--){
+        for(let k=0;k<n;k++){
+          document.write(m[k][i]);
+        }
+        document.write("<br>");
+      }
+      /*
+        5. Дана квадратная матрица M порядка N.
+        Вывести элементы массива "змейкой" с нижнего правого угла горизонтально.
+      */
+      m = [];
+      n = prompt("Введите размер квадратной матрицы:");
+      for(let i=0;i<n;i++){
+        m[i] = new Array();
+        for(let k=0;k<n;k++){
+          m[i][k] = prompt("Введите значение " + i + " " + k);
+        }
+      }
+      document.write("Введена таблица:" + "<br>");
+      for(let i=0;i<n;i++){
+        for(let k=0;k<n;k++){
+          document.write(m[i][k]);
+        }
+        document.write("<br>");
+      }
+      let q=true;;
+      document.write("<br>" + "Элементы таблицы змейкой:" + "<br>");
+      for(let i=n-1;i>=0;i--){
+        if(q){
+          for(let k=n-1;k>=0;k--){
+            document.write(m[i][k]);
+          }
+          q=false;
+        }
+        else{
+          for(let k=0;k<n;k++){
+            document.write(m[i][k]);
+          }
+          q=true;
+        }
+        document.write("<br>");
+      }
+    </script>
+  </body>
+</html>

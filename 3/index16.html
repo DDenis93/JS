@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      
+    </style>
+    <script>
+      let Client = Object();
+      let next = true;
+      let i = 1;
+      while(next){
+        Client[i] = Object();
+        Client[i].id = i;
+        Client[i].lastName = prompt("Введите фамилию: ");
+        Client[i].firstName = prompt("Введите имя: ");
+        Client[i].surName = prompt("Введите отчество: ");
+        Client[i].age = prompt("Введите возраст: ");
+        next = confirm("Хотите добавить ещё одного клиента?");
+        i++;
+      }
+      for(let j=1;j<i;j++){
+        if(Client[j].age >= 18){
+          document.write(Client[j].id + "- ФИО: " +
+          Client[j].lastName+" "+ Client[j].firstName[0]+". "+Client[j].surName[0]+".<br>");
+        }
+      }
+      //------------
+     class Employee{
+      constructor(firstName, lastName, rate, workDay) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.rate = rate;
+        this.workDay = workDay;
+      }
+      getSalary(){
+        return this.rate * this.workDay;
+      }
+     }
+     person1 = new Employee("Иван", "Иванов",7000,20);
+     alert(person1.getSalary()+" рублей");
+
+
+    </script>
+  </head>
+  <body>
+    <div>
+      <form>
+
+      </form>
+    </div>
+  </body>
+</html>

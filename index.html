@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+    </style>
+    <script>
+      function offPercent(){
+        let P = document.getElementById("pOff");
+        let I = document.getElementById("iOff");
+        let t = document.getElementById("tOff");
+        let K = document.getElementById("kOff");
+        let result = (P.value*I.value*t.value/K.value)/100;
+        document.getElementById("resOff").innerText = result.toFixed(2);
+      }
+      function onPercent(){
+        let P = document.getElementById("pOn");
+        var P2 = 0;
+        let I = document.getElementById("iOn"); 
+        let t = document.getElementById("tOn"); 
+        let K = document.getElementById("kOn");
+        var result=0;
+        var result2=0;
+        var result3=0;
+
+        if(t.value<=30){
+          result = (P.value*I.value*t.value/K.value)/100;
+          document.getElementById("resOn").innerText = result.toFixed(2);
+        }
+        else{
+          var t2 = Math.floor(t.value/30);
+          var t3 = Math.round(30/100*((t.value/30-t2)*100));
+          let Pval = P.value;
+
+          for(let i=1;i<=t2;i++){
+            result = (Pval*I.value*30/K.value)/100;
+            P2 =+ Pval + result;
+            Pval = P2;
+            result3 += result; 
+          }
+          if(t3 > 0){
+            result2 = (Pval*I.value*t3/K.value)/100;
+            result3 += result2;
+          }
+
+          document.getElementById("resOn").innerText = result3.toFixed(2);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <h1>Калькулятор вкладов</h1>
+      <hr>
+      <h3>Без капитализации процентов</h3>
+      <form>
+        <table border="1" cellpadding="4" cellspacing="0">
+          <tr>
+            <td>Сумма вклада:</td>
+            <td><input type="number" min="10000" max="100000000"
+              id="pOff" value="100000" onchange="offPercent()"></td>
+          </tr>
+          <tr>
+            <td>Годовая ставка по депозиту:</td>
+            <td><input type="number" min="0" max="100"
+              id="iOff" value="10" onchange="offPercent()"></td>
+          </tr>
+          <tr>
+            <td>Срок размещения в днях (до 10 лет):</td>
+            <td><input type="number" min="1" max="3660"
+              id="tOff" value="30" onchange="offPercent()"></td>
+          </tr>
+          <tr>
+            <td>Число дней в году:</td>
+            <td><input type="number" min="1" max="366"
+              id="kOff" value="365" onchange="offPercent()"></td>
+          </tr>
+          <tr>
+            <td>Результат:</td>
+            <td><p id="resOff"></p></td>
+          </tr>
+      </table>          
+    </form>
+    <hr>
+    <h3>С капитализацией процентов</h3>
+    <form>
+      <table border="1" cellpadding="4" cellspacing="0">
+        <tr>
+          <td>Сумма вклада:</td>
+          <td><input type="number" min="10000" max="100000000"
+          id="pOn" value="100000" onchange="onPercent()"></td>
+        </tr>
+        <tr>
+          <td>Годовая ставка по депозиту:</td>
+          <td><input type="number" min="0" max="100"
+          id="iOn" value="10" onchange="onPercent()"></td>
+        </tr>
+        <tr>
+          <td>Срок размещения в днях (до 10 лет):</td>
+          <td><input type="number" min="1" max="3660"
+          id="tOn" onchange="onPercent()"></td>
+        </tr>
+        <tr>
+          <td>Число дней в году:</td>
+          <td><input type="number" min="1" max="366"
+          id="kOn" value="365" onchange="onPercent()"></td>
+        </tr>
+        <tr>
+          <td>Результат:</td>
+          <td><p id="resOn"></p></td>
+        </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

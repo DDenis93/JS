@@ -1,0 +1,57 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <script>
+      alert("Задание 1");
+      let a = prompt("Введите число: ");
+      alert((a%2==0) ? "Чётное" : "Нечётное");   
+// --------------
+      alert("Задание 2");
+      let b = prompt("Введите двузначное число: ");
+      if(b[0]>b[1]){
+        alert("Первое число больше второго ("+b+")");
+      }
+      else if(b[0]<b[1]){
+        alert("Второе число больше первого ("+b+")");
+      }
+      else{
+        alert("Числа равны");
+      }
+// --------------      
+      alert("Задание 3");
+      let R = prompt("Введите значение переменной R: ");
+      let T = prompt("Введите значение переменной T: ");
+      if((0<T) && (T <= 1)){
+        alert(Math.pow(R,2) - Math.sin(Math.pow(R,2)+T));
+      }
+      if(T <= 0){
+        alert("0");
+      }
+      if(T > 1){
+        alert(Math.pow(T,2) - Math.sin(Math.pow(R,2)+T));
+      }
+// --------------
+      alert("Задание 4");
+      let month = prompt("Введите номер месяца от 1 до 12, где 1 = Январь:");
+      switch(month){
+        case '1' :
+        case '2' :
+        case '12': alert("Зима"); break;
+        case '3' :
+        case '4' :
+        case '5' : alert("Весна"); break;
+        case '6' :
+        case '7' :
+        case '8' : alert("Лето"); break;
+        case '9' :
+        case '10':
+        case '11': alert("Осень"); break;
+        default  : alert("Введено неверное число");
+      }
+    </script>
+    <p>
+      Текст
+    </p>
+  </body>
+</html>
